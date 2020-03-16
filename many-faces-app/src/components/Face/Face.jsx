@@ -6,14 +6,14 @@ import Eyes from "../Eyes/Eyes";
 const Face = props => {
   const { image } = props;
   const [eyesLevel, rotateEyes] = useState(true);
-  const spinEyes = eyesLevel ? "" : styles.rotate;
+  const spinEyes = eyesLevel ? null : styles.rotate;
   return (
     <>
       <div
         className={`${spinEyes} ${styles.faceCard}`}
         onClick={() => rotateEyes(!eyesLevel)}
       >
-        <img className src={image} alt={image} />
+        <img className={spinEyes} src={image} alt={image} />
         <Eyes />
       </div>
     </>
